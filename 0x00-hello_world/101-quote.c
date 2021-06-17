@@ -5,8 +5,8 @@
  * holds the message but not on stdout console.
  * return: 1
 */
-int main(void)
+init main(void)
 {
-	fprintf(stderr, "and that piece of art is useful\"- Dora korpar, 2015-10-19");
+	write(2, "and that piece of art is useful\"- Dora korpar, 2015-10-19", 57);
 	return (1);
 }
