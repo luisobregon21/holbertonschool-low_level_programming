@@ -3,7 +3,6 @@
  * main - function print all alphabet
  * Return: 0
 */
-
 int main(void)
 {
 	int a = 97;
@@ -20,4 +19,5 @@ int main(void)
 			A++;
 	}
 	putchar('\n');
+	return (0);
 }
