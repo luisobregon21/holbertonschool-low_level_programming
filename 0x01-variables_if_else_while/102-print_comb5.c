@@ -19,7 +19,7 @@ int main(void)
 				putchar(' ');
 				putchar(secondComb / 10 + '0');
 				putchar(secondComb % 10 + '0');
-				if (!(firstComb == 98 && secondComb == 9))
+				if (!(firstComb == 98 && secondComb == 99))
 				{
 					putchar(',');
 					putchar(' ');
