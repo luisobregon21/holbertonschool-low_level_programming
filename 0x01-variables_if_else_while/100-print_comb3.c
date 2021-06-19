@@ -16,8 +16,10 @@ int main(void)
 				putchar(num1 + 48);
 				putchar(num2 + 48);
 				if (!(num1 == 8 && num2 == 9))
-				putchar(',');
-				putchar(' ');
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 	}
