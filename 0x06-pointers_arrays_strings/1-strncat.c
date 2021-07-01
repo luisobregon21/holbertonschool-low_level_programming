@@ -24,7 +24,7 @@ char *_strncat(char *dest, char *src, int n)
 	}
 
 	/*Add null characters at the end of the string if condition is met*/
-	if(index2 < n)
+	if (index2 < n)
 	{
 		src[index2] = '\0';
 	}
