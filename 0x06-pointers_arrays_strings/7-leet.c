@@ -1,4 +1,5 @@
 #include "holberton.h"
+
 /**
  * *leet - encodes string into 1337
  * @arr: array of characters
@@ -10,8 +11,8 @@ char *leet(char *arr)
 {
 	int index, index2;
 
-	char let[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
-	char num[] = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'};
+	char let[] = "aAeEoOtTlL";
+	char num[] = "4433007711";
 
 	for (index = 0; arr[index] != '\0'; index++)
 	{
