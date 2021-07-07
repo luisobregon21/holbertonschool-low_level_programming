@@ -33,5 +33,9 @@ char *_strstr(char *haystack, char *needle)
 			return ((&haystack[index]));
 		}
 	}
+	if(index == length)
+	{
+		return ((&haystack[index]));
+	}
 	return (NULL);
 }
