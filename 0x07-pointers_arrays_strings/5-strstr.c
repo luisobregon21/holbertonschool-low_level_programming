@@ -24,11 +24,13 @@ char *_strstr(char *haystack, char *needle)
 		for (index2 = 0; needle[index2] != '\0'; index2++)
 		{
 			if (haystack[index + index2] == needle[index2])
+			{
 				break;
+			}
 		}
 		if (index2 == length)
 		{
-			return (&haystack[index]);
+			return ((&haystack[index]));
 		}
 	}
 	return (NULL);
