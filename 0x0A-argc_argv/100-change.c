@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
 	if (riches < 0)
 	{
 		printf("0\n");
+		return (0);
 	}
 
 	while (riches != 0)
