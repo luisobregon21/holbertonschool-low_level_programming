@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 
 	calc = get_op_func(argv[2]);
 
-	if (calc == NULL)
+	if (calc == 0)
 	{
 		printf("Error\n");
 		exit(101);
