@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	if (calc == '/' || calc == '%')
+	if (calc == / || calc == %)
 	{
 		printf("Error\n");
 		exit(100);
