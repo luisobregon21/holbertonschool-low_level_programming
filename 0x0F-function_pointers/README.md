@@ -38,3 +38,23 @@ int main()
   printf("%d\n",c);
 }
 #end ejemplo
+
+#new ej.
+#include <stdio.h>
+
+void A()
+{
+  printf("Hello\n");
+}
+void B(void *(ptr)()) //function accepts pointer as arguement
+{
+  ptr(); //call-back function that "ptr" points to
+}
+int main()
+{
+  //B(A) is the same as below
+  //A is a call back function
+  void(*p)() = A;
+  B(p);
+}
+#end ej.
