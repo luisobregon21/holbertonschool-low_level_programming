@@ -36,7 +36,7 @@ void print_all(const char * const format, ...)
 			case 's':
 				str = va_arg(list, char *);
 				if (str == NULL)
-					printf("%s(nil)", comma);
+					printf("(nil)");
 				printf("%s%s", comma, str);
 		}
 		comma = ", ";
