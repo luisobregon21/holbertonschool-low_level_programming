@@ -14,9 +14,7 @@ void print_all(const char * const format, ...)
 		printf("\n");
 		return;
 	}
-
 	va_start(list, format);
-
 	while (format[idx] != '\0')
 	{
 		switch (format[idx])
@@ -25,17 +23,14 @@ void print_all(const char * const format, ...)
 				printf("%s%c", comma, va_arg(list, int));
 				comma = ", ";
 				break;
-
 			case 'i':
 				printf("%s%i", comma, va_arg(list, int));
 				comma = ", ";
 				break;
-
 			case 'f':
 				printf("%s%f", comma, va_arg(list, double));
 				comma = ", ";
 				break;
-
 			case 's':
 				str = va_arg(list, char *);
 				if (str == NULL)
