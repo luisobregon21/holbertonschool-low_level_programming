@@ -46,7 +46,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (NULL);
 	}
 
-	return (0);
+	return (NULL);
 }
 /**
  * create_node - creates a new node
