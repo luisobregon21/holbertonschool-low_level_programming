@@ -1,47 +1,62 @@
 #include "lists.h"
+listint_t *create_node(listint_t *point, int num);
 /**
  * *insert_nodeint_at_index - inserts a new node at a given position.
  * @head: pointer to the pointer of the head.
- * @idx: index where the new node will be added.
+ * @idx: counter where the new node will be added.
  * @n: the value the data will have.
  * Return: address of the new node.
-*/
+ */
 
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *new, *tmp;
-	unsigned int index;
-
-	if (*head == NULL)
-		return (NULL);
+	listint_t *new = NULL, *tmp;
+	unsigned int counter = 1;
 
 	tmp = *head;
-	for (index = 0; index < idx; index++)
+	while (tmp != NULL)
 	{
-		if (tmp->next == NULL)
+		if (idx == 0)
 		{
-			return (NULL);
+			new = create_node(new, n);
+			new->next = tmp;
+			*head  = new;
+			return (new);
+		}
+
+		if (counter == idx)
+		{
+			new = create_node(new, n);
+			new->next = tmp->next;
+			tmp->next = new;
+			return (new);
 		}
 		tmp = tmp->next;
+		counter++;
 	}
-	new = malloc(sizeof(listint_t));
-	if (new == NULL)
+
+	if (counter > idx)
 	{
 		return (NULL);
 	}
 
-	if (idx == 0)
+	return (0);
+}
+/**
+ * create_node - creates a new node
+ * @point: a listint_t pointer
+ * @num: the data for the node.
+ * Return: the node created
+*/
+listint_t *create_node(listint_t *point, int num)
+{
+	point = malloc(sizeof(listint_t));
+	if (point == NULL)
 	{
-		new->n = n;
-		new->next = tmp;
-		*head  = new;
-	}
-	else
-	{
-		new->n = n;
-		new->next = tmp->next;
-		tmp->next = new;
+		return (NULL);
 	}
 
-	return (new);
+	point->n = num;
+
+	return (point);
 }
