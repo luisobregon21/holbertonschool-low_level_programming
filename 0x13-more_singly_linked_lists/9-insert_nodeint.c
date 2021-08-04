@@ -10,56 +10,32 @@ listint_t *create_node(listint_t *point, int num);
 
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *new = NULL, *tmp;
+	listint_t *tmp = *head, *new;
 	unsigned int counter = 1;
 
-	tmp = *head;
-	while (tmp != NULL)
-	{
-		if (idx == 0)
-		{
-			new = create_node(new, n);
-			if (new == NULL)
-				return (NULL);
-			new->next = *head;
-			return (new);
-		}
+	new = malloc(sizeof(listint_t));
+		if (new == NULL)
+			return (NULL);
 
-		if (counter == idx)
-		{
-			new = create_node(new, n);
-			if (new == NULL)
-				return (NULL);
-			new->next = tmp->next;
-			tmp->next = new;
-			return (new);
-		}
+	if (idx == 0)
+	{
+		new->n = n;
+		new->next = *head;
+		*head = new;
+		return (new);
+	}
+
+	while (counter < idx)
+	{
+		if (tmp == NULL || tmp->next == NULL)
+			return (NULL);
+
 		tmp = tmp->next;
 		counter++;
 	}
+	new->n = n;
+	new->next = tmp->next;
+	tmp->next = new;
 
-	if (counter > idx)
-	{
-		return (NULL);
-	}
-
-	return (0);
-}
-/**
- * create_node - creates a new node
- * @point: a listint_t pointer
- * @num: the data for the node.
- * Return: the node created
-*/
-listint_t *create_node(listint_t *point, int num)
-{
-	point = malloc(sizeof(listint_t));
-	if (point == NULL)
-	{
-		return (NULL);
-	}
-
-	point->n = num;
-
-	return (point);
+	return (new);
 }
