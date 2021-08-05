@@ -16,12 +16,13 @@ unsigned int binary_to_uint(const char *b)
 	{
 		if (b[idx] == '0' || b[idx] == '1')
 		{
+/* shifts the number by 1*/
 			uint <<= 1;
+/* subtract the 0 to convert it*/
 			uint += b[idx] - '0';
 		}
 		else
 		{
-			uint <<= 1;
 			return (0);
 		}
 	}
