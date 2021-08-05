@@ -12,10 +12,19 @@ unsigned int binary_to_uint(const char *b)
 	if (b == NULL)
 		return (0);
 
-	for (idx = 0; b[idx] == '0' || b[idx] == '1'; idx++)
+	for (idx = 0; b[idx] != '\0'; idx++)
 	{
-		uint <<= 1;
-		uint += b[idx] - '0';
+		if (b[idx] == '0' || b[idx] == '1')
+		{
+			uint <<= 1;
+			uint += b[idx] - '0';
+		}
+		else
+		{
+			uint <<= 1;
+			return (0);
+		}
 	}
+
 	return (uint);
 }
