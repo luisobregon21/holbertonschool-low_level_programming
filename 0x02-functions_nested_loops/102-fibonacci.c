@@ -6,20 +6,21 @@
 
 int main(void)
 {
-	int Fibonacci = 1;
-	int num, a = 0, b = 0;
+	unsigned long int Fibonacci = 1;
+	unsigned long int num, a = 0, b = 0;
 
 	for (num = 0; num < 50; num++)
 	{
 		a = b;
 		b = Fibonacci;
 		Fibonacci = a + b;
-		printf("%d, ", Fibonacci);
+		//a = b;
+		printf("%ld, ", Fibonacci);
 	}
 	a = b;
 	b = Fibonacci;
 	Fibonacci = a + b;
-	printf("%d\n", Fibonacci);
+	printf("%ld\n", Fibonacci);
 
 	return (0);
 }
