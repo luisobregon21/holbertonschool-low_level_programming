@@ -14,7 +14,6 @@ int main(void)
 		a = b;
 		b = Fibonacci;
 		Fibonacci = a + b;
-		//a = b;
 		printf("%ld, ", Fibonacci);
 	}
 	a = b;
