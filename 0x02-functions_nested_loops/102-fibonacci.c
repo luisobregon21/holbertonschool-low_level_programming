@@ -6,15 +6,14 @@
 
 int main(void)
 {
-	int Fibonacci = 0;
-	int num, a = 0, b = 1;
+	int Fibonacci = 1;
+	int num, a = 0, b = 0;
 
 	for (num = 0; num < 50; num++)
 	{
 		a = b;
 		b = Fibonacci;
 		Fibonacci = a + b;
-
 		printf("%d, ", Fibonacci);
 	}
 	a = b;
