@@ -6,8 +6,8 @@
 
 int main(void)
 {
-	unsigned long int Fibonacci = 1;
-	unsigned long int num, a = 0, b = 0;
+	unsigned long long int Fibonacci = 1;
+	unsigned long long int num, a = 0, b = 0;
 
 	for (num = 0; num < 97; num++)
 	{
