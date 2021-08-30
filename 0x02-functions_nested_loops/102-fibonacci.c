@@ -9,13 +9,15 @@ int main(void)
 	unsigned long int Fibonacci = 1;
 	unsigned long int num, a = 0, b = 0;
 
-	for (num = 0; num < 50; num++)
+	for (num = 0; num < 49; num++)
 	{
 		a = b;
 		b = Fibonacci;
 		Fibonacci = a + b;
 		printf("%ld, ", Fibonacci);
 	}
+	a = b;
+	b = Fibonacci;
 	Fibonacci = a + b;
 	printf("%ld\n", Fibonacci);
 
