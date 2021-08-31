@@ -6,12 +6,12 @@
 
 int main(void)
 {
-	long unsigned int num = 612852475143;
+	unsigned long int num = 612852475143;
 	long int div = 2, fact;
 
 	while (num != 0)
 	{
-		if (num % div !=0)
+		if (num % div != 0)
 			div += 1;
 		else
 		{
