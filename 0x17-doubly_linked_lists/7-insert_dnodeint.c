@@ -5,6 +5,7 @@
  * Index starts at 0
  * @h: address of the head of the list.
  * @n: value of the node.
+ * Return: the address of the new node, or NULL if it failed.
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
@@ -12,26 +13,22 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int counter = 1;
 
 	new = malloc(sizeof(dlistint_t));
-		if (new == NULL)
-			return (NULL);
+	if (new == NULL)
+		return (NULL);
 
-	if (idx == 0)
+	new->n = n;
+	if (tmp == NULL || counter == idx)
 	{
-		new->n = n;
-		new->next = *h;
+		new->next = tmp;
 		*h = new;
 		return (new);
 	}
 
-	while (counter < idx)
+	while (tmp && tmp->next && counter < idx)
 	{
-		if (tmp == NULL || tmp->next == NULL)
-			return (NULL);
-
 		tmp = tmp->next;
 		counter++;
 	}
-	new->n = n;
 	new->next = tmp->next;
 	tmp->next = new;
 
