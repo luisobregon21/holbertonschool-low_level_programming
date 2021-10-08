@@ -7,7 +7,7 @@ void hash_table_print(const hash_table_t *ht)
 {
 	unsigned long int idx = 0;
 	char *faker = "";
-	
+
 	if (ht == NULL)
 		return;
 
