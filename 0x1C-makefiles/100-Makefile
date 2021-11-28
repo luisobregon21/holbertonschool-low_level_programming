@@ -1,4 +1,4 @@
-#defines all targets that are not files
+# make -f 100-Makefile
 .PHONY: all clean oclean fclean re
 
 SRC = main.c school.c
