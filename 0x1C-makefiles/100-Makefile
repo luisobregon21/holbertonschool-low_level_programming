@@ -1,0 +1,17 @@
+# defines all targets that are not files
+.PHONY: all clean oclean fclean re
+
+SRC = main.c school.c
+CC = gcc
+OBJ = ${SRC:.c=.o}
+NAME= school
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+all: m.h ${OBJ}
+	${CC} ${CFLAGS} ${SRC} -o ${NAME}
+clean:
+	${RM} *~ ${NAME}
+oclean:
+	${RM} ${OBJ}
+fclean: clean oclean
+re: oclean all
